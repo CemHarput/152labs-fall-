@@ -11,9 +11,9 @@ int main()
 	person array;
 	stack_t stack;
 	initializeS(&stack);
-	fread(&array, sizeof(person), 1, binaryp);
+	fread(&array, sizeof(person), 1, binaryp);// to init structure array
 	
-	while (!feof(binaryp))
+	while (!feof(binaryp))//read the binary files and push the stack
 	{
 		push(&stack, array);
 		fread(&array, sizeof(person), 1, binaryp);
@@ -21,18 +21,13 @@ int main()
 	
 		
 	}
-	while (!isEmptyS(&stack))
+	while (!isEmptyS(&stack))// pop the stack elements and transfer to  the structure array and print screen the result.
 	{
 		
 		array = pop(&stack);
 		printf("%s %s %d\n", array.name, array.surname, array.age);
 	}
 
-	while (!feof(binaryp))
-	{
-		
-		fread(&array, sizeof(person), 1, binaryp);
-	}
 
 
 	
