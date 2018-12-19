@@ -35,7 +35,19 @@ node_t *search(node_t *headp,char src[])
 	}
 	return NULL;
 }
-void reversePrint(node_t* head) {
+/*node_t *reverse(node_t *headp, node_t *newp)//LABGUIDE SOLUTION METHOD
+{
+	if (headp != NULL)
+	{
+		newp = addBeginning(newp, headp->data);
+		newp = reverse(headp->next, newp);
+	}
+	return (newp);
+}*/
+
+
+void reversePrint(node_t* head)//MY METHOD
+{
 	if (head == NULL)
 	{
 		return;
