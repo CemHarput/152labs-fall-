@@ -35,6 +35,17 @@ node_t *search(node_t *headp,char src[])
 	}
 	return NULL;
 }
+void reversePrint(node_t* head) {
+	if (head == NULL)
+	{
+		return;
+	}
+	else
+	{
+		reversePrint(head->next);
+		printf("%s %d->", head->data.name,head->data.lim);
+	}
+}
 int main()
 {
 	FILE*inp;
